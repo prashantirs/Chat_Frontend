@@ -1,0 +1,19 @@
+.message-box{
+    background-color: gainsboro;
+    max-width: 45vw;
+    margin: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    display: inline-block;
+    clear: both;
+}
+.right{
+    float: right;
+    background-color: #4CAF50;
+    color: white;
+}
+.left{
+    float: left;
+    background-color: #2196F3;
+    color: white;
+}

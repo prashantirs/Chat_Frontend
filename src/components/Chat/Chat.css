@@ -1,0 +1,9 @@
+.chatBox{
+    height: 90vh;
+    box-sizing: border-box;
+    width: 95vw;
+}
+h1{
+    text-align: center;
+    margin: 1rem;
+}
