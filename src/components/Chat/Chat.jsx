@@ -26,7 +26,6 @@ const Chat = () => {
   useEffect(() => {
     socket = SocketIO(ENDPOINT,{transports: ['websocket']});
     socket.on('connect', () => {
-      alert(`Connected to server at ${ENDPOINT}`);
       setId(socket.id)
     });
     
@@ -75,14 +74,16 @@ console.log(messages)
 
   return (
     <>
-      <h1>chat</h1>
+      <h1>Chat</h1>
       <ScrollToBottom  className="chatBox">
         {messages.map((message)=>{
-          return (<Message user={message.id === id ? '' : message.user} message={message.text} key={message.id} classs={message.id === id ? "right":"left"}/>)
+          return (<Message user={message.user} message={message.text} key={message.id} messageID={message.id} userID={id} classs={message.id === id ? "right":"left"}/>)
         })}
       </ScrollToBottom >
-        <input type="text" onChange={(e)=>{setText(e.target.value)}}/>
+        <div className="send-box">
+        <input className='chat-input' type="text" onChange={(e)=>{setText(e.target.value)}} onKeyPress={(event) => event.key === 'Enter' ? send() : null} />
         <button onClick={send}>Send</button>
+        </div>
     </>
   )
 }

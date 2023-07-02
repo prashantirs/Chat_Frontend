@@ -1,17 +1,21 @@
 import './Message.css'
 
-const Message = ({message,classs,user}) => {
+const Message = ({message,classs,user,messageID,userID}) => {
   if(user){
-   if(user === "Admin"){
+   if(user === "Welcome" || user === "Admin"){
     return (
-        <div className={`message-box ${classs}`}>
+        <div className={`message-box center`}>
             {`${message}`}
         </div>    
       )
+   }else if(messageID === userID){
+      return   <div className={`message-box right`}>
+            {`You : ${message}`}
+        </div> 
    }else{
-    return (
-        <div className={`message-box ${classs}`}>
-            {`${user}:${message}`}
+     return (
+        <div className={`message-box left`}>
+            {`${user} : ${message}`}
         </div>    
       )
    }

@@ -1,9 +1,38 @@
 .chatBox{
-    height: 90vh;
+    height: 75vh;
     box-sizing: border-box;
     width: 95vw;
 }
 h1{
     text-align: center;
     margin: 1rem;
+}
+.send-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+    gap: 1rem;
+}
+.chat-input{
+    width: 80%;
+    height: 2rem;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 0.5rem;
+    font-size: 1rem;
+    outline: none;
+}
+.send-box > button{
+    width: 5rem;
+    height: 3rem;
+    border-radius: 10px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    background-color: black;
+    color: white;
 }
