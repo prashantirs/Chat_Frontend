@@ -30,3 +30,6 @@
     font-size: 1rem;
     outline: none;
 }
+.login-form > button:disabled{
+   background-color: rgba(74, 71, 71, 0.779);
+}

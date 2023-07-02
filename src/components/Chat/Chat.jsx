@@ -21,6 +21,7 @@ const Chat = () => {
 
   const send = () => {
     socket.emit('message', {text, id});
+    setText('')
   }
 
   useEffect(() => {
@@ -70,7 +71,6 @@ const Chat = () => {
     socket.off();
   }
 }, [messages])
-console.log(messages)
 
   return (
     <>
@@ -81,7 +81,7 @@ console.log(messages)
         })}
       </ScrollToBottom >
         <div className="send-box">
-        <input className='chat-input' type="text" onChange={(e)=>{setText(e.target.value)}} onKeyPress={(event) => event.key === 'Enter' ? send() : null} />
+        <input value={text} className='chat-input' type="text" onChange={(e)=>{setText(e.target.value)}} onKeyPress={(event) => event.key === 'Enter' ? send() : null} />
         <button onClick={send}>Send</button>
         </div>
     </>

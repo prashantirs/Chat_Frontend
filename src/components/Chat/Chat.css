@@ -2,6 +2,12 @@
     height: 75vh;
     box-sizing: border-box;
     width: 95vw;
+    /* //hide scroll bar */
+    overflow: hidden !important;
+}
+
+.chatBox ::-webkit-scrollbar {
+  display: none;
 }
 h1{
     text-align: center;
